@@ -61,7 +61,7 @@
             android:layout_weight="33" />
 
         <Button
-            android:onClick="backbtn"
+            android:onClick="btn2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="33"

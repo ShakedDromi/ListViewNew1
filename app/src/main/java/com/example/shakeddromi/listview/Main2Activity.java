@@ -20,6 +20,14 @@ public class Main2Activity extends AppCompatActivity implements AdapterView.OnIt
 
     int x1;
 
+    /**
+     * LVLANDS is the Java List View widget.
+     * tvcap and tvpop are the Java Text View widgets.
+     * the matrix m contains the countries' names.
+     * the matrix m2 contains the countries' capitals' name and population.
+     * x1 is the index of the chosen country.
+     */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,12 +36,18 @@ public class Main2Activity extends AppCompatActivity implements AdapterView.OnIt
         tvcap = (TextView) findViewById(R.id.tvcap);
         tvpop = (TextView) findViewById(R.id.tvpop);
         Intent gi = getIntent();
-        x1 = gi.getIntExtra("position", 2);
+        x1 = gi.getIntExtra("position", 1);
         ArrayAdapter<String> adp = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, m[x1]);
         LVLANDS.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         LVLANDS.setOnItemClickListener(this);
         LVLANDS.setAdapter(adp);
     }
+
+    /**
+     * when a continent is chosen, this function will start.
+     * @param position - the index of the chosen item from the List View.
+     * @return this function puts the the output in 2 Text View.
+     */
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -41,6 +55,10 @@ public class Main2Activity extends AppCompatActivity implements AdapterView.OnIt
         tvpop.setText("Population: " + m2[1][x1 * 7 + position]);
     }
 
+    /**
+     * when the "back" button is clicked, this function will start.
+     * this function finishes the activity. we move back to first activity.
+     */
 
     public void btn2(View view) {
         finish();

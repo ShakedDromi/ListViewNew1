@@ -41,7 +41,7 @@
             android:layout_height="match_parent"
             android:layout_weight="33"
             android:text="next"
-            android:onClick="bttn"
+            android:onClick="btn"
             tools:ignore="OnClick" />
 
         <Space
